@@ -1,6 +1,7 @@
 import React from 'react'
 import Navigation from '../../Multiple/Navigation/Navigation'
 import Services from '../Services/Services'
+import AppointmentBanner from '../AppointmentBanner/AppointmentBanner'
 
 
 
@@ -9,6 +10,7 @@ function Home() {
     <>
     <Navigation></Navigation>
     <Services/>
+    <AppointmentBanner></AppointmentBanner>
    
     </>
   )
