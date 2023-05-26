@@ -25,7 +25,7 @@ function Service(props) {
                 {name}
                 </Typography>
                 
-                <Typography variant="body2" sx={{ color: 'text.secondary'}}>
+                <Typography variant="body2" sx={{ color: 'gray', mt: 2, fontSize: 16}}>
                     {description}
             </Typography>
         </CardContent>
