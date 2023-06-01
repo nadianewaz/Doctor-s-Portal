@@ -7,6 +7,7 @@ import {
 
 } from "react-router-dom";
 import Home from './Component/Default_page/Home/Home';
+import Appointment from './Component/Appointment_Page/Appointment/Appointment';
 
 
 function App() {
@@ -16,17 +17,16 @@ function App() {
         <Routes> 
         
         <Route path='/' element={<Home/>}></Route>
+        <Route path='/Appointment' element={<Appointment/>}></Route>
+
+        
           
 
          </Routes>
         </BrowserRouter>
 
-        {/* <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/users">
-            <Users />
-          </Route> */}
+        
+         
           
         
 
