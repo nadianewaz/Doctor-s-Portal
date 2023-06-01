@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Home from './Component/Default_page/Home/Home';
 import Appointment from './Component/Appointment_Page/Appointment/Appointment';
+import React  from 'react';
 
 
 function App() {
