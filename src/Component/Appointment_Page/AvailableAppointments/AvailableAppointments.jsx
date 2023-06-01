@@ -1,9 +1,10 @@
 import React from 'react'
+import dayjs, { Dayjs } from 'dayjs';
 
 function AvailableAppointments( {date}) {
   return (
     <>
-    <h2>Available Appointment {date.toDateString()}</h2>
+    <h2>Available Appointment {dayjs(date).format('DD/MM/YYYY')}</h2>
     
     </>
   )
