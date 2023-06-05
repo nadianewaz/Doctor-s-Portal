@@ -1,11 +1,11 @@
 import React from 'react'
 import dayjs from 'dayjs';
-import { Box, Container } from '@mui/material';
+import {  Container, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Booking from '../Booking/Booking';
 
 
-const booking = [
+const bookings = [
   {
     id: 1,
     name:'Teeth Orthodontics',
@@ -47,16 +47,18 @@ const booking = [
 function AvailableAppointments( {date}) {
   return (
     <>
-      <Box sx={{ textAlign: 'center', color: '#5FC7C7'}}>
+      <Typography sx={{ textAlign: 'center', color: '#1CC7C1', fontWeight: '600', my: 5}}>
         <h2>Available Appointment on {dayjs(date).format('DD/MM/YYYY')}</h2>
-      </Box>
+      </Typography>
 
     <Container> 
     <Grid container spacing={2}>
       {
-       booking.map( booking => <Booking
-       key={booking.id}
-       booking={booking}>
+       bookings.map( bookingElement => <Booking
+       key={bookingElement.id}
+       booking1={bookingElement}
+       date={date} >  
+      
 
        </Booking>)
 

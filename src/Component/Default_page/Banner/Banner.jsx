@@ -10,10 +10,10 @@ const Banner = () => {
      <Container sx={{ flexGrow: 1 ,backgroundImage: `url(${bg})`, backgroundSize: 'cover', backgroundPosition: 'center', mt: 2 }}>
       <Grid container spacing={2}>
         <Grid item xs={12} md={5} sx={{mt: 15 }}>
-            <Typography variant='h3' sx={{fontWeight: '600', mb: 4}}>
-              Your New Smile
+            <Typography variant='h3' sx={{textTransform: "capitalize", fontWeight: '600', mb: 4}}>
+              your new smile
               <br /> 
-              Starts Here
+              starts here
             </Typography>
             <Typography variant='h6' sx={{fontWeight: '300', color: 'gray', fontSize: 16,  mb: 4, lineHeight: '30px'}}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem blanditiis sit corporis quidem dicta quae itaque voluptatum fugit debitis nihil.
