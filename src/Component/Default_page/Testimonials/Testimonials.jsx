@@ -39,10 +39,10 @@ const Testimonials = () => {
     return (
         <> 
         <Box sx={{ flexGrow: 1 }}>
-        <Typography variant="h6" component="div" sx={{ textTransform: 'uppercase', fontWeight: '800', color: '#5FC7C7', mb: '10px', mt: 5}}>
+        <Typography variant="h6" component="div" sx={{ textTransform: 'uppercase', fontWeight: '800', color: '#5FC7C7', mb: '10px', mt: 5, ml: 5}}>
               testimonials 
         </Typography>
-        <Typography variant="h4" component="div" sx={{ textTransform: 'capitalize', fontWeight: '600', mb: '90px'}}>
+        <Typography variant="h4" component="div" sx={{ textTransform: 'capitalize', fontWeight: '600', mb: '90px', ml: 5}}>
            what's our patients says  
         </Typography>
         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>

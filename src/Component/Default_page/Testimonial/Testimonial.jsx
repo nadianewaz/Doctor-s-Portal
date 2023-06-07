@@ -12,10 +12,10 @@ const Testimonial = (props) => {
             <Typography variant="body2" sx={{ color: 'gray', mt: 2, fontSize: 16}}>
                     {description}
             </Typography>
-            <Typography>
+            <Typography sx={{mt: 4}}>
             <img style={{width: '15%', height: '15%'}} src={img} alt="" />
             </Typography>
-            <Typography variant="h6" component="div" >
+            <Typography variant="h6" component="div" sx={{color: '#5FC7C7'}} >
                 {name}  
             </Typography>
             <Typography variant="body2" sx={{ color: 'gray', mt: 1, fontSize: 16}}>
