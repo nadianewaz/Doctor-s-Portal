@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 
 
 function Service(props) {
-    const {name, description, img} = props.service;
+    const {name, description, img} = props.service; 
   return (
     <>
     <Grid item xs={2} sm={4} md={4}>

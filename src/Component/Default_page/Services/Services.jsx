@@ -43,6 +43,7 @@ const Services = () => {
       <Typography variant="h4" component="div" sx={{ textTransform: 'capitalize', fontWeight: '600', mb: '90px'}}>
            services we provide
       </Typography>
+      
       <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
         {
           services.map( service=> <Service
