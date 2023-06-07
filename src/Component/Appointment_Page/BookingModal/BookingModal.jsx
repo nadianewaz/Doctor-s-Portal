@@ -19,6 +19,7 @@ const style = {
   p: 4,
 };
 
+
 const BookingModal = ( {openBooking, handleBookingClose, booking, date } ) => { 
     const {name, time} = booking;
 

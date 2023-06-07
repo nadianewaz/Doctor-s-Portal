@@ -5,6 +5,7 @@ import AppointmentBanner from '../AppointmentBanner/AppointmentBanner'
 import Banner from '../Banner/Banner'
 import ExceptionalSection from '../ExceptionalSection/ExceptionalSection'
 import Testimonials from '../Testimonials/Testimonials'
+import ContactUs from '../ContactUs/ContactUs'
 
 
 
@@ -16,7 +17,8 @@ function Home() {
     <Services/>
     <ExceptionalSection></ExceptionalSection> 
     <AppointmentBanner></AppointmentBanner>
-   <Testimonials></Testimonials>
+    <Testimonials></Testimonials>
+    <ContactUs></ContactUs>
    
     </>
   )
