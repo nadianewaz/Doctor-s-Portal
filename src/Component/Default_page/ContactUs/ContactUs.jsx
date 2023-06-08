@@ -42,29 +42,45 @@ const ContactUs = () => {
         <Typography variant="h6" component="div" sx={{ textTransform: 'uppercase',textAlign: "center", fontWeight: '800', color: '#5FC7C7', mb: '10px', mt: 5, ml: 5, pt: 8}}>
               contact us  
         </Typography>
-        <Typography variant="h4" component="div" sx={{ textTransform: 'capitalize',textAlign: "center", fontWeight: '600', mb: '90px', ml: 5}}>
-           always contact with us   
+        <Typography variant="h4" component="div" sx={{ textTransform: 'capitalize',textAlign: "center", fontWeight: '600', mb: '70px', ml: 5}}>
+           always connect with us   
         </Typography>
 
          
             <form onSubmit={handleForm}>  
          
             <TextField
-            sx={{ width: '75%', mt: 1 }}
+            sx={{ width: '72%', mt: 1 ,
+            "& .MuiInputBase-root": {
+              height: 75
+            },
+            backgroundColor: "#fff" 
+            
+          }}
             label=""
             id="outlined-size-small"
             defaultValue="Email Address*"  
             size="small"
           />  
             <TextField
-            sx={{ width: '75%', mt: 1, py: 2}} 
+            sx={{ width: '72%', mt: 3,
+            "& .MuiInputBase-root": {
+              height: 75
+            } ,
+            backgroundColor: "#fff"         
+          }} 
             label=""
             id="outlined-size-small"
             defaultValue="Subject*" 
             size="small"
           />  
             <TextField
-            sx={{ width: '75%', mt: 1}}
+            sx={{ width: '72%', mt: 3,
+            "& .MuiInputBase-root": {
+              height: 200
+            },
+            backgroundColor: "#fff"
+          }}
             label=""
             id="outlined-size-small"
             defaultValue="Your Message*" 
@@ -72,7 +88,7 @@ const ContactUs = () => {
           />  
            
       <Typography sx={{pb: 12}}>
-      <Button type='submit' sx={{ textTransform: "uppercase", mt: 3, backgroundColor: '#18D3B6', p: "8px 45px"}} variant="contained"> submit </Button>
+      <Button type='submit' sx={{ textTransform: "uppercase", mt: 3, backgroundColor: '#18D3B6', p: "8px 65px"}} variant="contained"> submit </Button>
       </Typography>
 
 
