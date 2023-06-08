@@ -44,7 +44,7 @@ const BookingModal = ( {openBooking, handleBookingClose, booking, date } ) => {
             {name}
           </Typography>
 
-          <Typography> 
+          
             <form onSubmit={handleBookingSubmit}> 
             <TextField
             sx={{ width: '90%', mt: 1}}
@@ -87,7 +87,7 @@ const BookingModal = ( {openBooking, handleBookingClose, booking, date } ) => {
 <Button type='submit' sx={{ textTransform: "uppercase", mt: 2, backgroundColor: '#18D3B6', p: "8px 45px", ml: 0  }} variant="contained">send</Button>
 
           </form>
-          </Typography>
+          
           
           
           </Box>

@@ -9,7 +9,7 @@ const Testimonial = (props) => {
         <Grid item xs={2} sm={4} md={4}>
             <Paper elevation={3} sx={{py: 5, px: 4, mx: 4, mb: 10, textAlign: 'center'}}> 
 
-            <Typography variant="body2" sx={{ color: 'gray', mt: 2, fontSize: "16px", lineHeight: "26px", textAlign: "justify"}}> 
+            <Typography  variant="body2" sx={{ color: 'gray', mt: 2, fontSize: "16px", lineHeight: "26px", textAlign: "justify"}}> 
                     {description}
             </Typography>
             <Typography sx={{mt: 4}}>
@@ -18,7 +18,7 @@ const Testimonial = (props) => {
             <Typography variant="h6" component="div" sx={{color: '#5FC7C7'}} >
                 {name}  
             </Typography>
-            <Typography variant="body2" sx={{ color: 'gray', mt: 1, fontSize: 16}}>
+            <Typography  variant="body2" sx={{ color: 'gray', mt: 1, fontSize: 16}}>
                     {country} 
             </Typography>
                 
