@@ -7,7 +7,7 @@ const Testimonial = (props) => {
     return (
         <>
         <Grid item xs={2} sm={4} md={4}>
-            <Paper elevation={3} sx={{py: 5, px: 4, mx: 4, mb: 10, textAlign: 'center'}}> 
+            <Paper elevation={3} sx={{py: 6, px: 5, mx: 1, mb: 10, textAlign: 'center'}}> 
 
             <Typography  variant="body2" sx={{ color: 'gray', mt: 2, fontSize: "16px", lineHeight: "26px", textAlign: "justify"}}> 
                     {description}
