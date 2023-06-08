@@ -18,8 +18,8 @@ const ExceptionalSection = () => {
             <h2> exceptional dental care, on your terms </h2>
             </Typography>
 
-            <Typography variant="body2" sx={{ color: 'gray', mt: 2, fontSize: "16px", lineHeight: "32px", mx: 6}}>
-                <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui ducimus, vel assumenda, excepturi voluptatibus a autem iure id doloremque quae, ullam iste sed. Accusantium vero corrupti eum, natus alias nostrum reiciendis ipsum iste voluptas nihil quae illum molestiae nesciunt, hic saepe? Quas placeat magni laborum deleniti quos corrupti incidunt, sint aliquid necessitatibus exercitationem totam iusto ex modi nam dolor illo! </p>
+            <Typography variant="body2" component={'p'} sx={{ color: 'gray', mt: 2, fontSize: "16px", lineHeight: "32px", mx: 6}}>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui ducimus, vel assumenda, excepturi voluptatibus a autem iure id doloremque quae, ullam iste sed. Accusantium vero corrupti eum, natus alias nostrum reiciendis ipsum iste voluptas nihil quae illum molestiae nesciunt, hic saepe? Quas placeat magni laborum deleniti quos corrupti incidunt, sint aliquid necessitatibus exercitationem totam iusto ex modi nam dolor illo!
             </Typography>
             </Box>
 
