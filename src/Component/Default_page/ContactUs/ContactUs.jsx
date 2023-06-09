@@ -38,11 +38,11 @@ const ContactUs = () => {
     return (
         <>
         
-        <Box sx={{  mb: 5, textAlign: "center", backgroundImage: `url(${appointmentbg})`}}> 
+        <Box sx={{  mb: 5, textAlign: "center", backgroundImage: `url(${appointmentbg})`, backgroundColor: 'rgba(45, 58, 74, 0.9)', backgroundBlendMode: 'darken, luminosity'}}> 
         <Typography variant="h6" component="div" sx={{ textTransform: 'uppercase',textAlign: "center", fontWeight: '800', color: '#5FC7C7', mb: '10px', mt: 5, ml: 5, pt: 8}}>
               contact us  
         </Typography>
-        <Typography variant="h4" component="div" sx={{ textTransform: 'capitalize',textAlign: "center", fontWeight: '600', mb: '70px', ml: 5}}>
+        <Typography variant="h4" component="div" sx={{ textTransform: 'capitalize',textAlign: "center", fontWeight: '600', mb: '70px', ml: 5, color: "#fff"}}>
            always connect with us   
         </Typography>
 
@@ -51,6 +51,7 @@ const ContactUs = () => {
          
             <TextField
             sx={{ width: '72%', mt: 1 ,
+            borderRadius: "5px",
             "& .MuiInputBase-root": {
               height: 75
             },
@@ -64,6 +65,7 @@ const ContactUs = () => {
           />  
             <TextField
             sx={{ width: '72%', mt: 3,
+            borderRadius: "5px",
             "& .MuiInputBase-root": {
               height: 75
             } ,
@@ -76,6 +78,7 @@ const ContactUs = () => {
           />  
             <TextField
             sx={{ width: '72%', mt: 3,
+            borderRadius: "5px",
             "& .MuiInputBase-root": {
               height: 200
             },
@@ -88,7 +91,7 @@ const ContactUs = () => {
           />  
            
       <Typography sx={{pb: 12}}>
-      <Button type='submit' sx={{ textTransform: "uppercase", mt: 3, backgroundColor: '#18D3B6', p: "8px 65px"}} variant="contained"> submit </Button>
+      <Button type='submit' sx={{ textTransform: "uppercase", mt: 3, backgroundColor: '#18D3B6', p: "8px 65px", borderRadius: "5px",}} variant="contained"> submit </Button>
       </Typography>
 
 
