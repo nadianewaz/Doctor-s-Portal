@@ -15,12 +15,12 @@ import bg from '../../../images/appointment-bg.png';
 export default function AppointmentBanner() {
   return (
     <>
-    <Box  sx={{ flexGrow: 1 , backgroundImage: `url(${bg})`, marginTop: '185px', backgroundColor: 'rgba(45, 58, 74, 0.9)', backgroundBlendMode: 'darken, luminosity'}}> 
+    <Box  sx={{ flexGrow: 1 , backgroundImage: `url(${bg})`, mt: '185px', backgroundColor: 'rgba(45, 58, 74, 0.9)', backgroundBlendMode: 'darken, luminosity'}}> 
 
       <Grid container spacing={2}>
         <Grid item xs={12} md={6} >
           <img 
-          style={{width: 600, marginTop: '-150px'}}
+          style={{width: 600, marginTop: '-150px'}} 
           src={doctor} alt=""/>
         </Grid>
 
