@@ -17,6 +17,7 @@ const Footer = () => {
          </Grid>
         <Grid item xs={12} sm={6} md={3}>
         <h2>hello</h2>
+        <h5>hiiiiiiii</h5>
          </Grid>
         
       </Grid>
