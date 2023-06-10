@@ -91,7 +91,7 @@ const ContactUs = () => {
           />  
            
       <Typography sx={{pb: 12}}>
-      <Button type='submit' sx={{ textTransform: "uppercase", mt: 3, backgroundColor: '#18D3B6', p: "8px 65px", borderRadius: "5px",}} variant="contained"> submit </Button>
+      <Button type='submit' sx={{ textTransform: "uppercase", mt: 3, mb: 7, backgroundColor: '#18D3B6', p: "8px 65px", borderRadius: "5px",}} variant="contained"> submit </Button>
       </Typography>
 
 

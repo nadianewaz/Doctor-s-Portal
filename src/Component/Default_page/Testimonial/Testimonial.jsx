@@ -22,14 +22,7 @@ const Testimonial = (props) => {
                     {country} 
             </Typography>
                 
-           
-
-
-
-
-
-
-            </Paper>
+         </Paper>
         </Grid>
         </>
     );

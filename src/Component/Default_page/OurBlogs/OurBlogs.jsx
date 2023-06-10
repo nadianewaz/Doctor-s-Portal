@@ -46,7 +46,7 @@ const OurBlogs = () => {
         <>
         <Box sx={{ flexGrow: 1, textAlign: "center" }}>  
        
-       <Typography variant="h6" component="div" sx={{ textTransform: 'uppercase', fontWeight: '800', color: '#5FC7C7', mb: '10px', mt: 15, ml: 5}}>
+       <Typography variant="h6" component="div" sx={{ textTransform: 'uppercase', fontWeight: '800', color: '#5FC7C7', mb: '10px', mt: 12, ml: 5}}>
               our blog  
         </Typography>
         <Typography variant="h4" component="div" sx={{ textTransform: 'capitalize', fontWeight: '600', mb: '90px', ml: 5}}>

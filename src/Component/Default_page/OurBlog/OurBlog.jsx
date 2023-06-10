@@ -1,12 +1,16 @@
 import { Grid, Paper, Typography } from '@mui/material';
+
 import React from 'react';
+
 
 const OurBlog = (props) => {
     const { img, name, date, heading, description} = props.ourblog;   
+   
+
     return (
         <>
-        <Grid item xs={2} sm={4} md={4}> 
-            <Paper elevation={3} sx={{py: 6, px: 5, mx: 1, mb: 10, textAlign: 'center'}}> 
+     <Grid item xs={2} sm={4} md={4}> 
+            <Paper elevation={3} sx={{ py: 6, px: 5, mx: 1, mb: 10, textAlign: 'center'}}> 
 
 
         <Grid container spacing={2}>
@@ -39,7 +43,10 @@ const OurBlog = (props) => {
                 
             </Paper>
         </Grid> 
-        
+       
+      
+
+ 
         </>
     );
 };
