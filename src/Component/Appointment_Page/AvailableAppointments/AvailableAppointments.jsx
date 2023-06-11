@@ -1,6 +1,6 @@
 import React from 'react'
 import dayjs from 'dayjs';
-import {  Container, Typography } from '@mui/material';
+import {  Box, Container, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Booking from '../Booking/Booking';
 
@@ -47,6 +47,7 @@ const bookings = [
 function AvailableAppointments( {date}) {
   return (
     <>
+    <Box sx={{mt: 12}}> 
       <Typography sx={{ textAlign: 'center', color: '#1CC7C1', fontWeight: '600', my: 5}}>
         <h2>Available Appointment on {dayjs(date).format('DD/MM/YYYY')}</h2>
       </Typography>
@@ -67,6 +68,7 @@ function AvailableAppointments( {date}) {
       
     </Grid>
     </Container>
+    </Box>
     
     </>                                                                           
   )
