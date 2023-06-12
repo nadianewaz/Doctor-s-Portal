@@ -16,7 +16,10 @@ const Registration = () => {
     }
 
     const handleFormSubmitting = (event) => {
-        alert('submitting');
+        if(loginData.password !== loginData.password2){
+          alert('Your password did not match');
+          return
+        }
         event.preventDefault();
       }
 
@@ -41,6 +44,14 @@ const Registration = () => {
             label="Password" 
             type='password'
             name='password'
+            onChange={handleOnChange} 
+            variant="standard" />
+            <TextField 
+            sx={{ width: '75%', m: 1, mt: 3}} 
+            id="standard-basic" 
+            label="Re-Type Your Password" 
+            type='password'
+            name='password2'
             onChange={handleOnChange} 
             variant="standard" />
           <Link to="/login"> 
