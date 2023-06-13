@@ -1,31 +1,49 @@
 import { useEffect, useState } from "react";
 import initializeFirebase from "../Component/Loginn/LogIn/Firebase/firebase.init";
-import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged , signOut } from "firebase/auth";
 
 // initialization  
 initializeFirebase();
 
 const useFirebase = () =>{
     const [user, setUser] = useState({}); 
+    const [isLoading, setisLoading] = useState(true); 
+    const [authError, setauthError] = useState(' '); 
 
 
     const auth = getAuth();
 
     const registerUser = (email, password) =>{
+      setisLoading(true); 
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            // Signed in 
+          setauthError(' '); 
             const user = userCredential.user;
-            // ...
           })
           .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            // ..
-          });
+            setauthError = error.message;
+       
+          })
+          .finally(() => setisLoading(false)); 
         
 
     }
+
+    const logUser = ( email, password ) => {
+      setisLoading(true);
+    createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      setauthError(' '); 
+    
+    })
+    .catch((error) => {
+      setauthError = error.message; 
+    
+    })
+    .finally(() => setisLoading(false));
+
+    }
+
 
 //  observer user state 
     useEffect( () => {
@@ -36,6 +54,7 @@ const useFirebase = () =>{
             } else {
                 setUser({}); 
              }
+             setisLoading(false);
           });
           return () => unsubscribe;
     }, []);
@@ -45,13 +64,16 @@ const useFirebase = () =>{
             // Sign-out successful.
           }).catch((error) => {
             // An error happened.
-          });
+          })
+          .finally(() => setisLoading(false));
           
     }
-    
+                 
     return{
         user,
+        isLoading,
         registerUser,
+        logUser,
         logout,
 
 

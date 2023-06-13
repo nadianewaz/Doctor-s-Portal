@@ -31,8 +31,8 @@ const LogIn = () => {
             sx={{ width: '75%', m: 1, mt: 8}} 
             id="standard-basic" 
             label="User Name" 
-            type='text'
-            name='name'
+            type='email'
+            name='email'
             onChange={handleOnChange}
             variant="standard" />
             <TextField 

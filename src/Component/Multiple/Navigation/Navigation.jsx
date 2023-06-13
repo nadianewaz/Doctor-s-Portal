@@ -8,8 +8,10 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';   
 import { Link } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 
 const Navigation = () => {
+  const {user, logout} = useAuth(); 
   return (
     <>
  <Box sx={{ flexGrow: 1 }}>
@@ -30,9 +32,18 @@ const Navigation = () => {
           <Link to="/appointment">
           <Button color="inherit">Appointment</Button>
           </Link>
-          <Link to="/login">
-          <Button color="inherit">Login</Button> 
-          </Link>
+         {
+           user?.email ?
+          
+           <Button onClick={logout} color="inherit">Login</Button> 
+        
+           :
+           <Link to="/login">
+           <Button color="inherit">Login</Button> 
+           </Link>
+
+
+         }
          
          
           

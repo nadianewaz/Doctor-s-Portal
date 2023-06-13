@@ -1,11 +1,13 @@
-import { Button, Container, Grid, TextField, Typography } from '@mui/material';
+import { Alert, Button, CircularProgress, Container, Grid, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Login from '../../../images/login.png';
+import useAuth from '../../../hooks/useAuth';
 
 const Registration = () => {
     const [loginData, setLoginData] = useState({});
-    
+    const {user, registerUser, isLoading, authError} = useAuth();    
+
     const handleOnChange = e => {
         const field = e.target.name; 
         const value = e.target.value; 
@@ -20,6 +22,7 @@ const Registration = () => {
           alert('Your password did not match');
           return
         }
+        registerUser(loginData.email , loginData.password);
         event.preventDefault();
       }
 
@@ -29,13 +32,13 @@ const Registration = () => {
         <Grid container spacing={2}>
         <Grid item sx={{mt: 15}} xs={12} md={6}>
         <Typography sx={{textTransform: "capitalize", ml: 23}}  variant="body1" gutterBottom> registration  </Typography> 
-            <form onSubmit={handleFormSubmitting}>
+           { !isLoading && <form onSubmit={handleFormSubmitting}>
             <TextField 
             sx={{ width: '75%', m: 1, mt: 8}} 
             id="standard-basic" 
             label="User Name" 
-            type='text'
-            name='name'
+            type='email'
+            name='email' 
             onChange={handleOnChange}
             variant="standard" />
             <TextField 
@@ -57,11 +60,14 @@ const Registration = () => {
           <Link to="/login"> 
           <Button variant='text'> Already registered? Please login!! </Button>  
           </Link>
-            <Button type='submit' sx={{ textTransform: "capitalize",  mb: 7, m:1, backgroundColor: '#18D3B6', p: "8px 65px", borderRadius: "5px", width: '75%', mt: 8}} variant="contained"> sign in </Button>                     
+            <Button type='submit' sx={{ textTransform: "capitalize",  mb: 7, m:1, backgroundColor: '#18D3B6', p: "8px 65px", borderRadius: "5px", width: '75%', mt: 8}} variant="contained"> register  </Button>                     
            
 
 
-            </form>
+            </form> }
+            {isLoading && <CircularProgress />}
+            {user?.email && <Alert severity="success"> User Created Successfully!!</Alert>}
+            {authError && <Alert severity="error"> {authError} </Alert>}
        
          
         </Grid>

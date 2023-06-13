@@ -11,6 +11,7 @@ import Appointment from './Component/Appointment_Page/Appointment/Appointment';
 import React  from 'react';
 import LogIn from './Component/Loginn/LogIn/LogIn';
 import Registration from './Component/Loginn/Registration/Registration';
+import AuthProvider from './Contexts/AuthProvider/AuthProvider';
 
 
 
@@ -19,6 +20,8 @@ import Registration from './Component/Loginn/Registration/Registration';
 function App() {
   return (
    <>
+
+        <AuthProvider>
         <BrowserRouter> 
         <Routes> 
         
@@ -26,21 +29,11 @@ function App() {
         <Route path='/Appointment' element={<Appointment/>}></Route>
         <Route path='/Login' element={<LogIn/>}></Route>
         <Route path='/Registration' element={<Registration/>}></Route>
-          
-      
-
-        
-          
-
-         </Routes>
+        </Routes>
         </BrowserRouter>
 
-        
-         
-          
-        
 
-
+        </AuthProvider>
 
    </>
   );
