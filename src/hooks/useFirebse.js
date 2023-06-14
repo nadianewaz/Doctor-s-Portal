@@ -7,40 +7,42 @@ initializeFirebase();
 
 const useFirebase = () =>{
     const [user, setUser] = useState({}); 
-    const [isLoading, setisLoading] = useState(true); 
-    const [authError, setauthError] = useState(' '); 
+    const [isLoading, setIsLoading] = useState(true); 
+    const [authError, setAuthError] = useState(''); 
 
 
     const auth = getAuth();
 
     const registerUser = (email, password) =>{
-      setisLoading(true); 
+      setIsLoading(true); 
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-          setauthError(' '); 
+          setAuthError(''); 
             const user = userCredential.user;
           })
           .catch((error) => {
-            setauthError = error.message;
+            setAuthError(error.message);
        
           })
-          .finally(() => setisLoading(false)); 
+          .finally(() => setIsLoading(false)); 
         
 
     }
 
-    const logUser = ( email, password ) => {
-      setisLoading(true);
-    createUserWithEmailAndPassword(auth, email, password)
+    const logUser = ( email, password, location, history ) => {
+    setIsLoading(true);
+    createUserWithEmailAndPassword(auth, email, password) 
     .then((userCredential) => {
-      setauthError(' '); 
+      const destination = location?.state?.form || '/';
+      history.replace(destination); 
+      setAuthError(''); 
     
     })
     .catch((error) => {
-      setauthError = error.message; 
+      setAuthError(error.message);
     
     })
-    .finally(() => setisLoading(false));
+    .finally(() => setIsLoading(false));
 
     }
 
@@ -54,24 +56,26 @@ const useFirebase = () =>{
             } else {
                 setUser({}); 
              }
-             setisLoading(false);
+             setIsLoading(false); 
           });
           return () => unsubscribe;
     }, []);
 
     const logout = () =>{
+      setIsLoading(true); 
         signOut(auth).then(() => {
             // Sign-out successful.
           }).catch((error) => {
             // An error happened.
           })
-          .finally(() => setisLoading(false));
+          .finally(() => setIsLoading(false));
           
     }
                  
     return{
         user,
         isLoading,
+        authError,
         registerUser,
         logUser,
         logout,

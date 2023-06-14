@@ -61,10 +61,8 @@ const Registration = () => {
           <Button variant='text'> Already registered? Please login!! </Button>  
           </Link>
             <Button type='submit' sx={{ textTransform: "capitalize",  mb: 7, m:1, backgroundColor: '#18D3B6', p: "8px 65px", borderRadius: "5px", width: '75%', mt: 8}} variant="contained"> register  </Button>                     
-           
+           </form> }
 
-
-            </form> }
             {isLoading && <CircularProgress />}
             {user?.email && <Alert severity="success"> User Created Successfully!!</Alert>}
             {authError && <Alert severity="error"> {authError} </Alert>}

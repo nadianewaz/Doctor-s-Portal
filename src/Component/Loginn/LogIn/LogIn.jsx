@@ -1,11 +1,16 @@
-import { Button, Container, Grid, TextField, Typography } from '@mui/material';
+import { Button, Container, Grid, TextField, Typography, CircularProgress, Alert } from '@mui/material'; 
 import React, { useState } from 'react';
 import Login from '../../../images/login.png';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, unstable_HistoryRouter } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 
 const LogIn = () => {
     const [loginData, setLoginData] = useState({});
-    
+    const {user, loginUser, isLoading, authError} = useAuth();
+
+    const location = useLocation();
+    const history = unstable_HistoryRouter();  
+                                               
     const handleOnChange = e => {
         const field = e.target.name; 
         const value = e.target.value; 
@@ -16,7 +21,7 @@ const LogIn = () => {
     }
 
     const handleFormSubmitting = (event) => {
-        alert('submitting');
+        loginUser(loginUser.email, loginUser.password, location, history);  
         event.preventDefault();
       }
 
@@ -46,7 +51,11 @@ const LogIn = () => {
           <Link to="/registration">
           <Button variant='text'> New user? Please register!! </Button>  
           </Link>
-            <Button type='submit' sx={{ textTransform: "capitalize",  mb: 7, m:1, backgroundColor: '#18D3B6', p: "8px 65px", borderRadius: "5px", width: '75%', mt: 8}} variant="contained"> sign in </Button>                     
+            <Button type='submit' sx={{ textTransform: "capitalize",  mb: 7, m:1, backgroundColor: '#18D3B6', p: "8px 65px", borderRadius: "5px", width: '75%', mt: 8}} variant="contained"> sign in </Button>   
+
+            {isLoading && <CircularProgress />}
+            {user?.email && <Alert severity="success"> User Created Successfully!!</Alert>}
+            {authError && <Alert severity="error"> {authError} </Alert>}                  
            
 
 
