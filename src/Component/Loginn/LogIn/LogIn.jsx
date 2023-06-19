@@ -1,7 +1,7 @@
 import { Button, Container, Grid, TextField, Typography, CircularProgress, Alert } from '@mui/material'; 
 import React, { useState } from 'react';
 import Login from '../../../images/login.png';
-import { Link, useLocation, unstable_HistoryRouter } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
 const LogIn = () => {
@@ -9,7 +9,7 @@ const LogIn = () => {
     const {user, loginUser, isLoading, authError} = useAuth();
 
     const location = useLocation();
-    const history = unstable_HistoryRouter();  
+    const navigate = useNavigate();  
                                                
     const handleOnChange = e => {
         const field = e.target.name; 
@@ -21,7 +21,7 @@ const LogIn = () => {
     }
 
     const handleFormSubmitting = (event) => {
-        loginUser(loginUser.email, loginUser.password, location, history);  
+        loginUser(loginUser.email, loginUser.password, location, navigate);  
         event.preventDefault();
       }
 
@@ -34,15 +34,15 @@ const LogIn = () => {
             <form onSubmit={handleFormSubmitting}>
             <TextField 
             sx={{ width: '75%', m: 1, mt: 8}} 
-            id="standard-basic" 
-            label="User Name" 
+            // id="standard-basic" 
+            label="User Email" 
             type='email'
             name='email'
             onChange={handleOnChange}
             variant="standard" />
             <TextField 
             sx={{ width: '75%', m: 1, mt: 3}} 
-            id="standard-basic" 
+            // id="standard-basic" 
             label="Password" 
             type='password'
             name='password'
