@@ -23,21 +23,16 @@ function App() {
    <>
 
         <AuthProvider> 
-          <Fragment> 
         <BrowserRouter> 
         <Routes> 
         
         <Route path='/' element={<Home/>}></Route>
-        <Route path='/' element={<PrivateRoute/>}>
-        <Route path='/Appointment' element={<Appointment/>}></Route>
-        </Route>
-        {/* <PrivateRoute path='/Appointment' element={<Appointment/>}></PrivateRoute>   */}
+        <Route path='/Appointment' element={<PrivateRoute><Appointment/></PrivateRoute>}></Route>
        
         <Route path='/Login' element={<LogIn/>}></Route> 
         <Route path='/Registration' element={<Registration/>}></Route> 
         </Routes>
         </BrowserRouter>
-        </Fragment>
 
         </AuthProvider>
 
