@@ -6,7 +6,7 @@ import useAuth from '../../../hooks/useAuth';
 
 const LogIn = () => {
     const [loginData, setLoginData] = useState({});
-    const {user, loginUser, isLoading, authError} = useAuth();
+    const {user, logUser, isLoading, authError} = useAuth();
 
     const location = useLocation();
     const navigate = useNavigate();  
@@ -21,7 +21,7 @@ const LogIn = () => {
     }
 
     const handleFormSubmitting = (event) => {
-        loginUser(loginUser.email, loginUser.password, location, navigate);  
+      logUser(loginData.email, loginData.password, location, navigate);  
         event.preventDefault();
       }
 
@@ -54,7 +54,7 @@ const LogIn = () => {
             <Button type='submit' sx={{ textTransform: "capitalize",  mb: 7, m:1, backgroundColor: '#18D3B6', p: "8px 65px", borderRadius: "5px", width: '75%', mt: 8}} variant="contained"> sign in </Button>   
 
             {isLoading && <CircularProgress />}
-            {user?.email && <Alert severity="success"> User Created Successfully!!</Alert>}
+            {user?.email && <Alert severity="success"> Login is successful!!</Alert>}
             {authError && <Alert severity="error"> {authError} </Alert>}                  
            
 
