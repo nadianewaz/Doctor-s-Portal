@@ -1,7 +1,7 @@
 import React from 'react';
 import useAuth from '../../../hooks/useAuth';
 import { CircularProgress } from '@mui/material';
-import { Route, Navigate , useLocation} from 'react-router-dom';
+import {  Navigate , useLocation} from 'react-router-dom';
 
 
 const PrivateRoute = ( { children, ...rest } ) => {

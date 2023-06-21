@@ -6,7 +6,7 @@ import useAuth from '../../../hooks/useAuth';
 
 const LogIn = () => {
     const [loginData, setLoginData] = useState({});
-    const {user, logUser, isLoading, authError} = useAuth();
+    const {user, logUser, signInWithGoogle, isLoading, authError} = useAuth();
 
     const location = useLocation();
     const navigate = useNavigate();  
@@ -23,6 +23,11 @@ const LogIn = () => {
     const handleFormSubmitting = (event) => {
       logUser(loginData.email, loginData.password, location, navigate);  
         event.preventDefault();
+      }
+
+      const handleGoogleSignIn = () => {
+        signInWithGoogle(location, navigate)
+
       }
 
     return (
@@ -56,11 +61,12 @@ const LogIn = () => {
             {isLoading && <CircularProgress />}
             {user?.email && <Alert severity="success"> Login is successful!!</Alert>}
             {authError && <Alert severity="error"> {authError} </Alert>}                  
-           
-
-
-            </form>
+          </form>
        
+       <p>-------------------</p>
+
+       <Button onClick={handleGoogleSignIn} variant='contained'> Google Sign In </Button>  
+
          
         </Grid>
         <Grid item xs={12} md={6}>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import initializeFirebase from "../Component/Loginn/LogIn/Firebase/firebase.init";
-import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged , signOut , signInWithEmailAndPassword} from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged , GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup, signOut} from "firebase/auth";
 
 // initialization  
 initializeFirebase();
@@ -12,7 +12,7 @@ const useFirebase = () =>{
 
 
     const auth = getAuth();
-
+    const googleProvider = new GoogleAuthProvider(); 
     const registerUser = (email, password) =>{
       setIsLoading(true); 
         createUserWithEmailAndPassword(auth, email, password)
@@ -47,6 +47,23 @@ const useFirebase = () =>{
     }
 
 
+        const signInWithGoogle = (location, navigate) => {
+        setIsLoading(true);
+                
+         signInWithPopup(auth, googleProvider)
+        .then((result) => {
+          
+          const user = result.user;
+          setAuthError('');
+        }).catch((error) => {
+          setAuthError(error.message);
+        })
+        .finally(() => setIsLoading(false)); 
+
+
+          } 
+
+
 //  observer user state 
     useEffect( () => {
        const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -78,6 +95,7 @@ const useFirebase = () =>{
         authError,
         registerUser,
         logUser,
+        signInWithGoogle,
         logout,
 
 
