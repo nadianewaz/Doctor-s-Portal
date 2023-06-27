@@ -63,9 +63,9 @@ const LogIn = () => {
             {authError && <Alert severity="error"> {authError} </Alert>}                  
           </form>
        
-       <p>-------------------</p>
+          <Typography sx={{textTransform: "capitalize", ml: 1, mt: 2, mb:2, fontWeight: 600}}  variant="body1" gutterBottom> sign in with google  </Typography> 
 
-       <Button onClick={handleGoogleSignIn} variant='contained'> Google Sign In </Button>  
+       <Button onClick={handleGoogleSignIn} sx={{ textTransform: "capitalize",  mb: 7, m:1, backgroundColor: '#18D3B6', p: "8px 25px", borderRadius: "5px"}} variant='contained'> Google Sign In </Button>  
 
          
         </Grid>

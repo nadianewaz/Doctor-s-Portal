@@ -1,11 +1,12 @@
 import { Alert, Button, CircularProgress, Container, Grid, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate  } from 'react-router-dom';
 import Login from '../../../images/login.png';
 import useAuth from '../../../hooks/useAuth';
 
 const Registration = () => {
     const [loginData, setLoginData] = useState({});
+    const navigate = useNavigate(); 
     const {user, registerUser, isLoading, authError} = useAuth();    
 
     const handleOnChange = e => {
@@ -13,6 +14,7 @@ const Registration = () => {
         const value = e.target.value; 
         const newLoginData = {...loginData};
         newLoginData[field] = value;
+        // console.log(newLoginData); 
         setLoginData(newLoginData); 
 
     }
@@ -22,7 +24,7 @@ const Registration = () => {
           alert('Your password did not match');
           return
         }
-        registerUser(loginData.email , loginData.password);
+        registerUser(loginData.email , loginData.password, loginData.name, navigate); 
         event.preventDefault();
       }
 
@@ -42,7 +44,7 @@ const Registration = () => {
             onChange={handleOnChange}
             variant="standard" />
             <TextField 
-            sx={{ width: '75%', m: 1, mt: 8}} 
+            sx={{ width: '75%', m: 1, mt:3}} 
             id="standard-basic" 
             label="Your Email" 
             type='email'

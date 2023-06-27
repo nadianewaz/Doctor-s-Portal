@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import initializeFirebase from "../Component/Loginn/LogIn/Firebase/firebase.init";
-import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged , GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup, signOut} from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged , GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup, updateProfile,  signOut} from "firebase/auth";
 
 // initialization  
 initializeFirebase();
@@ -13,20 +13,29 @@ const useFirebase = () =>{
 
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider(); 
-    const registerUser = (email, password) =>{
+
+    const registerUser = (email, password, name, navigate) =>{
       setIsLoading(true); 
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           setAuthError(''); 
-            const user = userCredential.user;
+          const newUser = {email, displayName: name}; 
+          setUser(newUser);
+
+          // send name to firebase after creation 
+          updateProfile(auth.currentUser, {
+            displayName: name 
+          }).then(() => {
+          }).catch((error) => { 
+          });
+          navigate('/'); 
+
           })
           .catch((error) => {
-            setAuthError(error.message);
+            setAuthError(error.message); 
        
           })
           .finally(() => setIsLoading(false)); 
-        
-
     }
 
     const logUser = ( email, password, location, navigate ) => {
@@ -59,9 +68,7 @@ const useFirebase = () =>{
           setAuthError(error.message);
         })
         .finally(() => setIsLoading(false)); 
-
-
-          } 
+} 
 
 
 //  observer user state 
