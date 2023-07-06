@@ -37,12 +37,14 @@ const BookingModal = ( {openBooking, handleBookingClose, booking, date } ) => {
     }
 
     const handleBookingSubmit = (event) => {
+      // collcet data 
       const appointment = {
         ...bookingInfo,
         time,
         serviceName : name,
         date : date.dayjs(date).format('DD/MM/YYYY') 
       }
+      // send to the server 
 
 
       handleBookingClose();
