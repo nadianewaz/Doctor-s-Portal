@@ -46,7 +46,7 @@ const BookingModal = ( {openBooking, handleBookingClose, booking, date } ) => {
         date : dateWithFormat
       }
       // send to the server 
-      console.log(appointment);
+     
 
 
       handleBookingClose();
