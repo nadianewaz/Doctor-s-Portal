@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import dayjs from 'dayjs';
-import {  Box, Container, Typography } from '@mui/material';
+import {  Alert, Box, Container, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Booking from '../Booking/Booking';
 
@@ -45,12 +45,15 @@ const bookings = [
 ];
 
 function AvailableAppointments( {date}) {
+    const [bookingSuccess, setBookingSuccess] = useState(false);
+
   return (
     <>
     <Box sx={{mt: 12}}> 
       <Typography sx={{ textAlign: 'center', color: '#1CC7C1', fontWeight: '600', my: 5}}>
         <h2>Available Appointment on {dayjs(date).format('DD/MM/YYYY')}</h2>
       </Typography>
+      {bookingSuccess && <Alert severity="success"> Login is successful!!</Alert>}
 
     <Container> 
     <Grid container spacing={2}>
@@ -58,18 +61,15 @@ function AvailableAppointments( {date}) {
        bookings.map( bookingElement => <Booking
        key={bookingElement.id}
        booking1={bookingElement}
-       date={date} >  
-      
+       date={date} > 
+       setBookingSuccess={setBookingSuccess}
 
-       </Booking>)
-
-
-      }
+        </Booking>)
+       }
       
     </Grid>
     </Container>
     </Box>
-    
     </>                                                                           
   )
 }

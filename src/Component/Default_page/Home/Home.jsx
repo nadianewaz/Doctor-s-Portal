@@ -12,6 +12,8 @@ import OurBlogs from '../OurBlogs/OurBlogs'
 
 
 function Home() {
+
+  
   return (
     <>
     <Navigation></Navigation>

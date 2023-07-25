@@ -23,16 +23,16 @@ function App() {
    <>
 
         <AuthProvider> 
-        <BrowserRouter> 
-        <Routes> 
+          <BrowserRouter> 
+          <Routes> 
+          
+          <Route path='/' element={<Home/>}></Route>
+          <Route path='/Appointment' element={<PrivateRoute><Appointment/></PrivateRoute>}></Route>
         
-        <Route path='/' element={<Home/>}></Route>
-        <Route path='/Appointment' element={<PrivateRoute><Appointment/></PrivateRoute>}></Route>
-       
-        <Route path='/Login' element={<LogIn/>}></Route> 
-        <Route path='/Registration' element={<Registration/>}></Route> 
-        </Routes>
-        </BrowserRouter>
+          <Route path='/Login' element={<LogIn/>}></Route> 
+          <Route path='/Registration' element={<Registration/>}></Route> 
+          </Routes>
+          </BrowserRouter>
 
         </AuthProvider>
 
