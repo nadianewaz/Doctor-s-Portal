@@ -26,6 +26,7 @@ const BookingModal = ( {openBooking, handleBookingClose, booking, date, setBooki
     const {user} = useAuth();  
     const initialInfo = {patientName : user.displayName, email: user.email, phone: ''}  
     const [bookingInfo, setBookingInfo] = useState({initialInfo}); 
+    
 
     const handleOnBlur = e => {
       const field = e.target.name;

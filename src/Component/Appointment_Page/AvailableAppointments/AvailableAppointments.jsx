@@ -53,7 +53,7 @@ function AvailableAppointments( {date}) {
       <Typography sx={{ textAlign: 'center', color: '#1CC7C1', fontWeight: '600', my: 5}}>
         <h2>Available Appointment on {dayjs(date).format('DD/MM/YYYY')}</h2>
       </Typography>
-      {bookingSuccess && <Alert severity="success"> Login is successful!!</Alert>}
+      {bookingSuccess && <Alert severity="success"> Appointment Booked is successful!!</Alert>}
 
     <Container> 
     <Grid container spacing={2}>
@@ -61,8 +61,9 @@ function AvailableAppointments( {date}) {
        bookings.map( bookingElement => <Booking
        key={bookingElement.id}
        booking1={bookingElement}
-       date={date} > 
-       setBookingSuccess={setBookingSuccess}
+       date={date} 
+       setBookingSuccess={setBookingSuccess} > 
+       
 
         </Booking>)
        }
