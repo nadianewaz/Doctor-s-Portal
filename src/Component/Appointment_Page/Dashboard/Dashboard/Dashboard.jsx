@@ -57,6 +57,7 @@ function Dashboard(props) {
   );
 
   const container = window !== undefined ? () => window().document.body : undefined;
+  console.log(setDate);
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -125,7 +126,7 @@ function Dashboard(props) {
                 <Grid item xs={12} sm={5}>
                   <Calender>
                     date={date}
-                    setDate={setDate}
+                    setDate={setDate}  
                   </Calender>
                 </Grid>
                 <Grid item xs={12} sm={7}> 

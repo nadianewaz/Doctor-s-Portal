@@ -45,7 +45,7 @@ const Appointments = ({ date }) => {
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                {row.patientName}
+                {row.initialInfo.patientName} 
               </TableCell>
               <TableCell align="right">{row.time}</TableCell>
               <TableCell align="right">{row.serviceName}</TableCell> 
