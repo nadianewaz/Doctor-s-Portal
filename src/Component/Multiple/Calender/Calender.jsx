@@ -12,7 +12,7 @@ const Calender = ( {date, setDate} ) => {
       onChange={ (newValue) => {
         setDate(newValue);
       }}/>
-    </LocalizationProvider>
+    </LocalizationProvider>                     
 
  
 
