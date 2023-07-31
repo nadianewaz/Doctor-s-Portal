@@ -20,6 +20,7 @@ import { Button, Grid } from '@mui/material';
 import Calender from '../../../Multiple/Calender/Calender';
 import Appointments from '../Appointments/Appointments';
 import { Link } from 'react-router-dom';
+import dayjs from 'dayjs';
 
 const drawerWidth = 200;
 
@@ -27,7 +28,7 @@ function Dashboard(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
    // User data with date
-  const [date, setDate] = React.useState(new Date()); 
+  const [ date, setDate ] = React.useState(dayjs(new Date()));
   
 
   const handleDrawerToggle = () => {
@@ -124,9 +125,9 @@ function Dashboard(props) {
         <Typography paragraph>
         <Grid container spacing={2}>
                 <Grid item xs={12} sm={5}>
-                  <Calender>
+                  <Calender
                     date={date}
-                    setDate={setDate}  
+                    setDate={setDate}>  
                   </Calender>
                 </Grid>
                 <Grid item xs={12} sm={7}> 

@@ -7,22 +7,26 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import dayjs from 'dayjs';
 
 const Appointments = ({ date }) => {
     // Data load for login users 
     const {user} = useAuth();
      // More appointments, default value array
     const [appointments, setAppointments] = useState([]); 
+
+    const dateWithFormat = dayjs(date).format('DD/MM/YYYY')
     
 
     // For data load used useEffect 
     useEffect(() => {
-        const url = `http://localhost:5000/appointments?email=${user.email}&date=${date}`;
+        const url = `http://localhost:5000/appointments?email=${user.email}&date=${dateWithFormat}`;
         fetch(url)
             .then( res => res.json())
             .then( data => setAppointments(data));
 
-    }, [date]);
+    }, [date, user.email]);
+
     return (
         <>
         <h2>Appointments : {appointments.length}</h2>
@@ -45,7 +49,7 @@ const Appointments = ({ date }) => {
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                {row.initialInfo.patientName} 
+                {row.patientName} 
               </TableCell>
               <TableCell align="right">{row.time}</TableCell>
               <TableCell align="right">{row.serviceName}</TableCell> 

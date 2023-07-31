@@ -25,7 +25,7 @@ const BookingModal = ( {openBooking, handleBookingClose, booking, date, setBooki
     const {name, time} = booking;
     const {user} = useAuth();  
     const initialInfo = {patientName : user.displayName, email: user.email, phone: ''}  
-    const [bookingInfo, setBookingInfo] = useState({initialInfo}); 
+    const [bookingInfo, setBookingInfo] = useState(initialInfo); 
     
 
     const handleOnBlur = e => {
@@ -50,8 +50,7 @@ const BookingModal = ( {openBooking, handleBookingClose, booking, date, setBooki
       fetch('http://localhost:5000/appointments',{
         method:'POST',
         headers: {
-          'content-type' : 
-          'application/json'
+          'content-type' : 'application/json'
         },
         body: JSON.stringify(appointment)
       })
