@@ -21,8 +21,9 @@ const useFirebase = () =>{
           setAuthError(''); 
           const newUser = {email, displayName: name}; 
           setUser(newUser);
-
-          // send name to firebase after creation 
+          //  Save user to the database 
+          saveUser(email, name); 
+          // Send name to firebase after creation 
           updateProfile(auth.currentUser, {
             displayName: name 
           }).then(() => {
@@ -94,6 +95,18 @@ const useFirebase = () =>{
           })
           .finally(() => setIsLoading(false));
           
+    }
+  //  Send user data to the server 
+    const saveUser = (email, displayName) =>{
+      const user = { email, displayName };
+      fetch('http://localhost:5000/users', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify(user)
+      })
+      // .then() 
     }
                  
     return{
